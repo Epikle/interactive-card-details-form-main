@@ -1,0 +1,46 @@
+// RESET
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  all: unset;
+}
+
+// SETTINGS, colors, sizes, fonts
+:root {
+  --cc-primary-red: #ff5252;
+  --cc-neutral-white: #ffffff;
+  --cc-light-violet: #dedddf;
+  --cc-dark-violet: #8e8593;
+  --cc-vdark-violet: #21092f;
+
+  --fs-normal: 18px;
+  --ff: 'Space Grotesk', sans-serif;
+
+  --border-radius: 8px;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: var(--fs-normal);
+  font-weight: 500;
+  background-image: url('bg-main-mobile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (min-width: 980px) {
+    background-image: url('bg-main-desktop.png');
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

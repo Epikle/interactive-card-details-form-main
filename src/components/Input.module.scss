@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  gap: 0.5rem;
+
+  label {
+    color: var(--cc-vdark-violet);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  input {
+    min-width: 0;
+    border: 1px solid var(--cc-light-violet);
+    border-radius: var(--border-radius);
+    padding: 0.75rem;
+    background-color: var(--cc-neutral-white);
+
+    &.error {
+      border-color: var(--cc-primary-red);
+    }
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+    &:focus {
+      border: 1px solid transparent;
+      background-image: linear-gradient(white, white),
+        radial-gradient(circle at top left, #6448fe, #600594);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+  }
+
+  .error-text {
+    color: var(--cc-primary-red);
+    font-size: 0.65rem;
+  }
+}

@@ -1,0 +1,74 @@
+.card {
+  position: relative;
+  width: fit-content;
+  margin-block: 2rem 1rem;
+  user-select: none;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .card-info {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    color: var(--cc-neutral-white);
+    text-transform: uppercase;
+
+    span {
+      font-size: clamp(1rem, calc(0.69rem + 1.31vw), 1.88rem);
+      letter-spacing: 2px;
+    }
+  }
+
+  &.front {
+    margin-right: 4rem;
+    margin-top: -5.2rem;
+
+    .card-name-container {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: clamp(0.5rem, calc(0.25rem + 1.05vw), 1rem);
+      }
+    }
+
+    &::before {
+      content: url('card-logo.svg');
+      position: absolute;
+      top: 0.5rem;
+      left: 0rem;
+      scale: 0.6;
+
+      @media (min-width: 980px) {
+        scale: 1;
+        top: 1.5rem;
+        left: 1.5rem;
+      }
+    }
+  }
+
+  &.back {
+    margin-left: 4rem;
+    order: -1;
+    z-index: -1;
+
+    @media (min-width: 980px) {
+      order: unset;
+    }
+
+    span {
+      position: absolute;
+      top: 49%;
+      right: 12%;
+      transform: translateY(-50%);
+      font-size: clamp(0.5rem, calc(0.25rem + 1.05vw), 1rem);
+    }
+  }
+}
