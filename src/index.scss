@@ -30,12 +30,12 @@ body {
   font-family: var(--ff);
   font-size: var(--fs-normal);
   font-weight: 500;
-  background-image: url('bg-main-mobile.png');
+  background-image: url('../bg-main-mobile.png');
   background-repeat: no-repeat;
   background-size: contain;
 
   @media (min-width: 980px) {
-    background-image: url('bg-main-desktop.png');
+    background-image: url('../bg-main-desktop.png');
   }
 }
 
