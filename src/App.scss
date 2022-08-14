@@ -62,8 +62,13 @@ main {
     text-align: center;
     padding-top: 1rem;
     padding-inline: 1rem;
+    margin-inline: auto;
     background-color: var(--cc-neutral-white);
     border-radius: var(--border-radius);
+
+    @media (min-width: 980px) {
+      margin-inline: unset;
+    }
 
     img {
       margin-inline: auto;
