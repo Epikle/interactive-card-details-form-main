@@ -33,7 +33,7 @@ const Input: React.FC<Props> = ({
 }) => {
   const id = useId();
   const [inputValue, setInputValue] = useState('');
-  const [isTouched, setIsTouched] = useState(true);
+  const [isTouched, setIsTouched] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
@@ -41,6 +41,8 @@ const Input: React.FC<Props> = ({
   }, []);
 
   const inputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsTouched(true);
+
     const targetValue =
       validate === 'NUMBER'
         ? event.currentTarget.value.trim()
@@ -77,7 +79,11 @@ const Input: React.FC<Props> = ({
       <div className={styles.container}>
         {!expand && label && <label htmlFor={id}>{label}</label>}
         <input
-          className={(isTouched && isError) || !formValid ? styles.error : ''}
+          className={
+            (isTouched && isError) || (!formValid && !isTouched)
+              ? styles.error
+              : ''
+          }
           type={type}
           id={id}
           placeholder={placeholder}
@@ -85,8 +91,9 @@ const Input: React.FC<Props> = ({
           onChange={inputChangeHandler}
           onBlur={blurHandler}
           value={inputValue}
+          inputMode={validate === 'NUMBER' ? 'numeric' : 'text'}
         />
-        {((isTouched && isError) || !formValid) && (
+        {((isTouched && isError) || (!formValid && !isTouched)) && (
           <span className={styles['error-text']}>{errorText}</span>
         )}
       </div>
