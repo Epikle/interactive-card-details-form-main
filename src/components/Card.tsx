@@ -1,4 +1,3 @@
-import cardLogo from '../assets/card-logo.svg';
 import frontBg from '../assets/bg-card-front.png';
 import backBg from '../assets/bg-card-back.png';
 

@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from 'react';
 
 import Footer from './components/Footer';
-
-import './App.scss';
 import Input from './components/Input';
 import Card from './components/Card';
+
 import thanks from './assets/icon-complete.svg';
+import './App.scss';
 
 const App: React.FC = () => {
   const [cardName, setCardName] = useState({ text: '', isValid: false });
@@ -28,8 +28,8 @@ const App: React.FC = () => {
       setFormValid(false);
       return;
     }
-    setSubmitted(true);
     setFormValid(true);
+    setSubmitted(true);
   };
 
   const continueBtnHandler = () => {
